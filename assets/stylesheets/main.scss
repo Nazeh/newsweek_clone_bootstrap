@@ -1,3 +1,95 @@
 // variables
+$red: #f72210;
+
+$font-family-sans-serif: 'Roboto condensed';
+$font-weight-base:700;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+// fonts
+@import "fonts";
+
+// Bootstrap Customization and UI
+
+.btn{
+    height: 34px;
+    padding: 0 12px;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 700;
+    color: $white;
+    background-color: $red;
+    border-radius: 0;
+
+    display: flex;
+    align-items: center;
+    svg{
+        height: 14px;
+        fill: $white;
+        margin-left: 10px;
+    }
+}
+
+header {
+    position: relative;
+    background-color: $red;
+    padding: 7px 0;
+
+    @media(min-width: map-get($grid-breakpoints, lg)) {
+        padding: 20px 0 15px 0;
+    }
+
+    a {
+        color: $white;
+    }
+
+    .brand {
+        height: 20px;
+
+        @media(min-width: map-get($grid-breakpoints, lg)) {
+            height: 60px;
+        }
+
+        a {
+            display: block;
+            position: relative;
+            height: 100%;
+
+            svg {
+                position: absolute;
+                top: 0;
+                fill: $white;
+                height: 100%;
+            }
+        }
+    }
+
+    date{
+        font-weight: normal;
+
+        padding: 15px 8px;
+    }
+
+    .header-right {
+        height: 100%;
+
+        a {
+            font-size: 18px;
+            &.lk-3 {
+                color: $red;
+                background-color: $white;
+                svg{
+                    fill: $red;
+                }
+            }
+            &.btn{
+                @media (max-width:map-get($grid-breakpoints, lg) ){
+                    height: 26px;
+                    font-size: 14px;
+                }
+            }
+        }
+
+    }
+}

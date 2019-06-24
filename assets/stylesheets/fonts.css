@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Roboto condensed';
+  src: url("../fonts/robotocondensed-regular-webfont.woff2") format("woff2"), url("../fonts/robotocondensed-regular-webfont.woff2") format("woff");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Roboto condensed';
+  src: url("../fonts/robotocondensed-bold-webfont.woff2") format("woff2"), url("../fonts/robotocondensed-bold-webfont.woff2") format("woff");
+  font-weight: bold;
+}
+/*# sourceMappingURL=fonts.css.map */
