@@ -8,7 +8,7 @@ Built With:
 * Sass
 
 # GitHub Page
-[Live version]()
+[Live version](https://raw.githack.com/Nazeh/newsweek_clone_bootstrap/development/index.html)
 
 # Author
 * Ar Nazeh https://github.com/Nazeh
