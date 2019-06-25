@@ -2587,8 +2587,8 @@ textarea.form-control {
 
 .btn:focus, .btn.focus {
   outline: 0;
-  -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .btn.disabled, .btn:disabled {
@@ -10583,6 +10583,7 @@ a.text-dark:hover, a.text-dark:focus {
   color: #fff;
   background-color: #f72210;
   border-radius: 0;
+  border: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10684,7 +10685,18 @@ header .header-right a.lk-3 svg {
   }
 }
 
-main {
-  height: 1000px;
+nav .navbar-toggler {
+  position: absolute;
+  right: 0;
+  top: -40px;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+}
+
+nav .navbar-toggler svg {
+  margin: auto;
+  fill: white;
+  height: 16px;
 }
 /*# sourceMappingURL=main.css.map */

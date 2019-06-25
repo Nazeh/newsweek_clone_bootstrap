@@ -6,6 +6,9 @@ $red: #f72210;
 $font-family-sans-serif: 'Roboto condensed';
 $font-weight-base:700;
 
+$btn-focus-box-shadow:none;
+$btn-outline:none;
+
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 // Customization start
@@ -25,9 +28,11 @@ $font-weight-base:700;
     color: $white;
     background-color: $red;
     border-radius: 0;
+    border: 0;
 
     display: flex;
     align-items: center;
+
     svg{
         height: 14px;
         fill: $white;
@@ -112,11 +117,28 @@ header {
 }
 
 nav{
+    .navbar-toggler{
+        position: absolute;
+        right: 0;
+        top: -40px;
+        height: 40px;
+        width: 40px;
+        padding: 0;
+
+        svg{
+            margin: auto;
+            fill: white;
+            height: 16px;
+            g{
+                
+            }
+        }
+    }
 
 }
 
 main{
-    height: 1000px;
+
 }
 
 footer{
