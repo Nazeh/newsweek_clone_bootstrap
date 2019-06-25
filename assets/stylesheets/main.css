@@ -10596,6 +10596,11 @@ body {
           align-items: center;
 }
 
+.btn:hover {
+  color: white;
+  text-decoration: none;
+}
+
 .btn svg {
   height: 14px;
   fill: #fff;
@@ -10613,16 +10618,14 @@ nav,
   margin: auto;
 }
 
+.main-footer {
+  padding: 0 30px;
+}
+
 header {
   position: relative;
   background-color: #f72210;
-  padding: 7px 0;
-}
-
-@media (min-width: 992px) {
-  header {
-    padding: 20px 0 15px 0;
-  }
+  padding: 20px 0 15px 0;
 }
 
 header a {
@@ -10630,19 +10633,17 @@ header a {
 }
 
 header .brand {
-  height: 20px;
-}
-
-@media (min-width: 992px) {
-  header .brand {
-    height: 60px;
-  }
+  height: 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 header .brand a {
   display: block;
   position: relative;
   height: 100%;
+  width: 396px;
 }
 
 header .brand a svg {
@@ -10652,26 +10653,14 @@ header .brand a svg {
   height: 100%;
 }
 
-@media (min-width: 992px) {
-  header .brand a svg {
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
-  }
-}
-
-header date {
+header .date div {
   font-weight: normal;
-  padding: 15px 8px;
+  line-height: 34px;
+  padding: 0 15px;
 }
 
 header .header-right {
   height: 100%;
-}
-
-@media (max-width: 992px) {
-  header .header-right {
-    right: 25px;
-  }
 }
 
 header .header-right a {
@@ -10688,11 +10677,60 @@ header .header-right a.lk-3 svg {
 }
 
 @media (max-width: 992px) {
+  header {
+    padding: 7px 0;
+  }
+  header .brand {
+    height: 20px;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+  }
+  header .brand a svg {
+    position: absolute;
+    left: 0;
+  }
+  header .date {
+    display: none;
+  }
+  header .header-right {
+    right: 25px;
+  }
   header .header-right a.btn {
     height: 26px;
     font-size: 14px;
     padding: 6px;
   }
+}
+
+header.header-fixed {
+  padding: 7px 0;
+}
+
+header.header-fixed .brand {
+  height: 20px;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+header.header-fixed .brand a svg {
+  position: absolute;
+  left: 0;
+}
+
+header.header-fixed .date {
+  display: none;
+}
+
+header.header-fixed .header-right {
+  right: 25px;
+}
+
+header.header-fixed .header-right a.btn {
+  height: 26px;
+  font-size: 14px;
+  padding: 6px;
 }
 
 nav .navbar-toggler {
@@ -10708,6 +10746,48 @@ nav .navbar-toggler svg {
   margin: auto;
   fill: white;
   height: 16px;
+}
+
+nav.navbar {
+  padding: 0;
+}
+
+nav.navbar-expand-lg {
+  height: 56px;
+  padding: 15px 160px 15px 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+nav.navbar-expand-lg .red-shape {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 13px;
+  width: 78px;
+  background-color: #f72210;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+}
+
+nav.navbar-expand-lg form {
+  position: absolute;
+  right: 78px;
+}
+
+nav.navbar-expand-lg form button {
+  background-color: transparent;
+}
+
+nav.navbar-expand-lg form button svg {
+  fill: black;
+  margin: 0;
+  height: 20px;
+  width: 20px;
+}
+
+main {
+  height: 1000px;
 }
 
 footer {
@@ -10742,7 +10822,7 @@ footer .footer-top ul {
 
 footer .footer-top .brand svg {
   margin-right: 15px;
-  width: 269px;
+  width: 236px;
   fill: #f72210;
 }
 
