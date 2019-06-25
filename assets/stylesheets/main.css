@@ -10597,6 +10597,11 @@ a.text-dark:hover, a.text-dark:focus {
   margin-left: 10px;
 }
 
+header, nav, main, footer {
+  max-width: 1310px;
+  margin: auto;
+}
+
 header {
   position: relative;
   background-color: #f72210;
@@ -10652,6 +10657,12 @@ header .header-right {
   height: 100%;
 }
 
+@media (max-width: 992px) {
+  header .header-right {
+    right: 25px;
+  }
+}
+
 header .header-right a {
   font-size: 18px;
 }
@@ -10669,6 +10680,11 @@ header .header-right a.lk-3 svg {
   header .header-right a.btn {
     height: 26px;
     font-size: 14px;
+    padding: 6px;
   }
+}
+
+main {
+  height: 1000px;
 }
 /*# sourceMappingURL=main.css.map */

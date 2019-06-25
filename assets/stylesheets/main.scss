@@ -1,10 +1,14 @@
 // variables
+$site-max-width:1310px ;
+
 $red: #f72210;
 
 $font-family-sans-serif: 'Roboto condensed';
 $font-weight-base:700;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
+
+// Customization start
 
 // fonts
 @import "fonts";
@@ -29,6 +33,13 @@ $font-weight-base:700;
         fill: $white;
         margin-left: 10px;
     }
+}
+
+// site contining
+
+header,nav,main, footer{
+    max-width: $site-max-width;
+    margin: auto;
 }
 
 header {
@@ -76,7 +87,9 @@ header {
 
     .header-right {
         height: 100%;
-
+        @media (max-width:map-get($grid-breakpoints, lg) ){
+            right: 25px;
+        }
         a {
             font-size: 18px;
             &.lk-3 {
@@ -90,9 +103,22 @@ header {
                 @media (max-width:map-get($grid-breakpoints, lg) ){
                     height: 26px;
                     font-size: 14px;
+                    padding: 6px;
                 }
             }
         }
 
     }
+}
+
+nav{
+
+}
+
+main{
+    height: 1000px;
+}
+
+footer{
+
 }
