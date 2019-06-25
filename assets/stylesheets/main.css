@@ -10636,6 +10636,13 @@ header .brand a svg {
   height: 100%;
 }
 
+@media (min-width: 992px) {
+  header .brand a svg {
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+
 header date {
   font-weight: normal;
   padding: 15px 8px;
