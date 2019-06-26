@@ -10676,6 +10676,14 @@ header .header-right a.lk-3 svg {
   fill: #f72210;
 }
 
+header .navbar-toggler {
+  display: none;
+}
+
+header .navbar-toggler .cross {
+  display: none;
+}
+
 @media (max-width: 992px) {
   header {
     padding: 7px 0;
@@ -10701,11 +10709,26 @@ header .header-right a.lk-3 svg {
     font-size: 14px;
     padding: 6px;
   }
+  header .navbar-toggler {
+    display: inline;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    height: 40px;
+    width: 40px;
+    padding: 0;
+  }
+  header .navbar-toggler svg {
+    margin: auto;
+    fill: white;
+    height: 16px;
+  }
 }
 
 header.fixed {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+  max-width: 100%;
+  width: 100%;
   top: 0;
   padding: 7px 0;
 }
@@ -10736,42 +10759,53 @@ header.fixed .header-right a.btn {
   padding: 6px;
 }
 
-header.fixed.scrollUp {
-  -webkit-transform: translateY(-40px);
-          transform: translateY(-40px);
+header.fixed .navbar-toggler {
+  display: inline;
+  position: absolute;
+  right: 0;
+  top: 0px;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+}
+
+header.fixed .navbar-toggler svg {
+  margin: auto;
+  fill: white;
+  height: 16px;
+}
+
+nav {
+  position: relative;
+  background-color: white;
+  border-bottom: 2px solid #f4f5f6;
 }
 
 nav.fixed {
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
+  width: 220px;
+  height: 100%;
+  right: 0;
   top: 40px;
-  display: none;
 }
 
 nav.fixed .red-shape {
   display: none;
 }
 
-nav .navbar-toggler {
-  position: absolute;
-  right: 0;
-  top: -40px;
-  height: 40px;
-  width: 40px;
-  padding: 0;
+nav.fixed ul {
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
 }
 
-nav .navbar-toggler svg {
-  margin: auto;
-  fill: white;
-  height: 16px;
+nav.fixed ul li {
+  border: none;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
 }
 
-nav.navbar {
-  padding: 0;
-}
-
-nav.navbar-expand-lg .red-shape {
+nav .red-shape {
   position: absolute;
   top: 0;
   right: 0;
@@ -10782,84 +10816,116 @@ nav.navbar-expand-lg .red-shape {
           clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
 }
 
-nav.navbar-expand-lg form {
+nav form {
   position: absolute;
   padding-right: 78px;
+  padding-left: 30px;
   width: 100%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 20px;
-      grid-template-columns: 1fr 20px;
-  justify-items: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 14px;
 }
 
-nav.navbar-expand-lg form button {
-  background-color: transparent;
-  padding: 0;
+nav form input {
+  margin-left: auto;
+  border: none;
+  width: 70px;
+  background-color: white;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-nav.navbar-expand-lg form button svg {
-  fill: black;
-  margin: 0;
+nav form input:focus {
+  width: 100%;
+  outline: none;
+}
+
+nav form input:focus ::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0);
+}
+
+nav form input:focus :-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0);
+}
+
+nav form input:focus ::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0);
+}
+
+nav form input:focus ::placeholder {
+  color: rgba(0, 0, 0, 0);
+}
+
+nav form input ::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+nav form input :-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+nav form input ::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+nav form input ::placeholder {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+nav form label {
+  position: absolute;
+  right: 78px;
+}
+
+nav form label svg {
   height: 20px;
   width: 20px;
 }
 
-nav.navbar-expand-lg form input {
-  border: none;
-  width: 60px;
-  background-color: white;
-}
-
-nav.navbar-expand-lg form input:focus {
-  width: 97.5%;
-}
-
-nav.navbar-expand-lg form input ::-webkit-input-placeholder {
-  color: rgba(0, 0, 0, 0.55);
-}
-
-nav.navbar-expand-lg form input :-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.55);
-}
-
-nav.navbar-expand-lg form input ::-ms-input-placeholder {
-  color: rgba(0, 0, 0, 0.55);
-}
-
-nav.navbar-expand-lg form input ::placeholder {
-  color: rgba(0, 0, 0, 0.55);
-}
-
-nav.navbar-expand-lg ul {
+nav ul {
   width: 100%;
-  padding-right: 160px;
+  padding: 0;
+  padding-right: 190px;
+  padding-left: 30px;
+  margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[10];
+      grid-template-columns: repeat(10, auto);
+}
+
+nav ul :nth-child(1) {
+  border: none;
+}
+
+nav ul li {
+  font-size: 21px;
+  line-height: 24px;
+  margin: 15px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  border-left: 1px solid #d9d9d9;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-nav.navbar-expand-lg ul li {
-  font-size: 21px;
-  line-height: 24px;
-  padding: 15px 0;
-}
-
-nav.navbar-expand-lg ul li a {
+nav ul li a {
+  color: black;
   padding: 0;
 }
 
-nav.navbar-expand-lg ul li a:hover {
+nav ul li a:hover {
   color: #f72210;
+  text-decoration: none;
 }
 
 main {
   height: 1000px;
-  background-color: #adb5bd;
 }
 
 footer {

@@ -16,30 +16,45 @@ $(document).ready(function () {
 
         if (currentScrollTop > 0) {
             header.addClass('fixed');
-            navbar.addClass('fixed')
+            navbar.addClass('fixed');
+            navbar.css({
+                "top": "40px",
+            });
 
             if (currentScrollTop > 40) {
 
-                if (c < currentScrollTop ) {
+                if (c < currentScrollTop) {
                     header.css({
                         "top": "-40px",
-                        "transition":"all 0.3s ease 0s"}
-                        );
+                        "transition": "all 0.3s "
+                    });
+                    navbar.css({
+                        "top": "0px",
+                        "transition": "all 0.3s "
+                    });
 
-                } else if (c > currentScrollTop ) {
+                } else if (c > currentScrollTop) {
                     header.css({
                         "top": "0",
-                        "transition":"all 0.3s ease 0s"}
-                        );
+                        "transition": "all 0.3s "
+                    });
+                    navbar.css({
+                        "top": "40px",
+                        "transition": "all 0.3s "
+                    });
                 }
             }
 
         } else {
             header.removeClass('fixed');
             header.css({
-                "transition":"none"}
-                );
+                "transition": "none"
+            });
             navbar.removeClass('fixed')
+            navbar.css({
+                "top": "0px",
+                "transition": "none"
+            });
         }
 
         c = currentScrollTop;
