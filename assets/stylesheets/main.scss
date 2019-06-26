@@ -127,6 +127,14 @@ header {
         .cross {
             display: none;
         }
+        &.crossed{
+            .cross{
+                display: block;
+            }
+            .bars{
+                display: none;
+            }
+        }
     }
 
     @mixin header-fixed {

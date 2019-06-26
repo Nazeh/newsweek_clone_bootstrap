@@ -10684,6 +10684,14 @@ header .navbar-toggler .cross {
   display: none;
 }
 
+header .navbar-toggler.crossed .cross {
+  display: block;
+}
+
+header .navbar-toggler.crossed .bars {
+  display: none;
+}
+
 @media (max-width: 992px) {
   header {
     padding: 7px 0;
