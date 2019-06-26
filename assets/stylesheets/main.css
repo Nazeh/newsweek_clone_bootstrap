@@ -10703,34 +10703,53 @@ header .header-right a.lk-3 svg {
   }
 }
 
-header.header-fixed {
+header.fixed {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   padding: 7px 0;
 }
 
-header.header-fixed .brand {
+header.fixed .brand {
   height: 20px;
   -webkit-box-pack: left;
       -ms-flex-pack: left;
           justify-content: left;
 }
 
-header.header-fixed .brand a svg {
+header.fixed .brand a svg {
   position: absolute;
   left: 0;
 }
 
-header.header-fixed .date {
+header.fixed .date {
   display: none;
 }
 
-header.header-fixed .header-right {
+header.fixed .header-right {
   right: 25px;
 }
 
-header.header-fixed .header-right a.btn {
+header.fixed .header-right a.btn {
   height: 26px;
   font-size: 14px;
   padding: 6px;
+}
+
+header.fixed.scrollUp {
+  -webkit-transform: translateY(-40px);
+          transform: translateY(-40px);
+}
+
+nav.fixed {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 40px;
+  display: none;
+}
+
+nav.fixed .red-shape {
+  display: none;
 }
 
 nav .navbar-toggler {
@@ -10752,13 +10771,6 @@ nav.navbar {
   padding: 0;
 }
 
-nav.navbar-expand-lg {
-  height: 56px;
-  padding: 15px 160px 15px 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
 nav.navbar-expand-lg .red-shape {
   position: absolute;
   top: 0;
@@ -10772,11 +10784,18 @@ nav.navbar-expand-lg .red-shape {
 
 nav.navbar-expand-lg form {
   position: absolute;
-  right: 78px;
+  padding-right: 78px;
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 20px;
+      grid-template-columns: 1fr 20px;
+  justify-items: right;
 }
 
 nav.navbar-expand-lg form button {
   background-color: transparent;
+  padding: 0;
 }
 
 nav.navbar-expand-lg form button svg {
@@ -10786,8 +10805,61 @@ nav.navbar-expand-lg form button svg {
   width: 20px;
 }
 
+nav.navbar-expand-lg form input {
+  border: none;
+  width: 60px;
+  background-color: white;
+}
+
+nav.navbar-expand-lg form input:focus {
+  width: 97.5%;
+}
+
+nav.navbar-expand-lg form input ::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+nav.navbar-expand-lg form input :-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+nav.navbar-expand-lg form input ::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+nav.navbar-expand-lg form input ::placeholder {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+nav.navbar-expand-lg ul {
+  width: 100%;
+  padding-right: 160px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+nav.navbar-expand-lg ul li {
+  font-size: 21px;
+  line-height: 24px;
+  padding: 15px 0;
+}
+
+nav.navbar-expand-lg ul li a {
+  padding: 0;
+}
+
+nav.navbar-expand-lg ul li a:hover {
+  color: #f72210;
+}
+
 main {
   height: 1000px;
+  background-color: #adb5bd;
 }
 
 footer {
