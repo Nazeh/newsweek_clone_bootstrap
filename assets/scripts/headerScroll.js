@@ -14,12 +14,17 @@ $(document).ready(function () {
 
         currentScrollTop = scroll;
 
-        if (currentScrollTop > 0) {
+        if (currentScrollTop == 0) {
+            header.removeClass('fixed');
+            header.css({
+                "transition": "none"
+            });
+            navbar.removeClass('fixed')
+            $('main').css("margin-top","0");
+        }else {
             header.addClass('fixed');
             navbar.addClass('fixed');
-            navbar.css({
-                "top": "40px",
-            });
+            $('main').css("margin-top","40px");
 
             if (currentScrollTop > 40) {
 
@@ -29,8 +34,7 @@ $(document).ready(function () {
                         "transition": "all 0.3s "
                     });
                     navbar.css({
-                        "top": "0px",
-                        "transition": "all 0.3s "
+                        "top": "0px"
                     });
 
                 } else if (c > currentScrollTop) {
@@ -39,22 +43,11 @@ $(document).ready(function () {
                         "transition": "all 0.3s "
                     });
                     navbar.css({
-                        "top": "40px",
-                        "transition": "all 0.3s "
+                        "top": "40px"
                     });
                 }
             }
 
-        } else {
-            header.removeClass('fixed');
-            header.css({
-                "transition": "none"
-            });
-            navbar.removeClass('fixed')
-            navbar.css({
-                "top": "0px",
-                "transition": "none"
-            });
         }
 
         c = currentScrollTop;

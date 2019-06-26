@@ -10776,89 +10776,11 @@ header.fixed .navbar-toggler svg {
 }
 
 nav {
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 95px;
   background-color: white;
   border-bottom: 2px solid #f4f5f6;
-}
-
-nav.fixed {
-  position: fixed;
-  width: 220px;
-  height: 100%;
-  right: 0;
-  top: 40px;
-  -webkit-box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.1);
-          box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
-}
-
-nav.fixed .red-shape {
-  display: none;
-}
-
-nav.fixed form {
-  position: relative;
-  margin: 0;
-  padding: 0 15px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-nav.fixed form input {
-  width: 200px;
-  margin: 0;
-}
-
-nav.fixed form label {
-  position: relative;
-  right: 0;
-}
-
-nav.fixed ul {
-  display: block;
-  padding: 0;
-}
-
-nav.fixed ul li {
-  margin: 0;
-  border: none;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-}
-
-nav.fixed ul li a {
-  padding: 5px 15px;
-  position: relative;
-  width: 100%;
-}
-
-nav.fixed ul li a:after {
-  content: '';
-  position: absolute;
-  right: 15px;
-  top: 10px;
-  -ms-grid-column-align: right;
-      justify-self: right;
-  -webkit-mask-image: url("https://g.newsweek.com/www/images/icon-arrow-right.svg");
-          mask-image: url("https://g.newsweek.com/www/images/icon-arrow-right.svg");
-  display: block;
-  width: 8px;
-  height: 14px;
-  background-color: black;
-}
-
-nav.fixed ul li a:hover {
-  background-color: black;
-  color: white;
-}
-
-nav.fixed ul li a:hover:after {
-  background-color: #f72210;
 }
 
 nav .red-shape {
@@ -10978,6 +10900,170 @@ nav ul li a {
 nav ul li a:hover {
   color: #f72210;
   text-decoration: none;
+}
+
+nav.fixed {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  z-index: 666;
+  display: block;
+  position: fixed;
+  width: 220px;
+  height: 100%;
+  right: -220px;
+  top: 40px;
+  -webkit-box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+}
+
+nav.fixed .red-shape {
+  display: none;
+}
+
+nav.fixed form {
+  position: relative;
+  margin: 0;
+  padding: 0 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+nav.fixed form input {
+  width: 200px;
+  margin: 0;
+}
+
+nav.fixed form label {
+  position: relative;
+  right: 0;
+}
+
+nav.fixed ul {
+  display: block;
+  padding: 0;
+}
+
+nav.fixed ul li {
+  margin: 0;
+  border: none;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+nav.fixed ul li a {
+  padding: 5px 15px;
+  position: relative;
+  width: 100%;
+}
+
+nav.fixed ul li a:after {
+  content: '';
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  -ms-grid-column-align: right;
+      justify-self: right;
+  -webkit-mask-image: url("https://g.newsweek.com/www/images/icon-arrow-right.svg");
+          mask-image: url("https://g.newsweek.com/www/images/icon-arrow-right.svg");
+  display: block;
+  width: 8px;
+  height: 14px;
+  background-color: black;
+}
+
+nav.fixed ul li a:hover {
+  background-color: black;
+  color: white;
+}
+
+nav.fixed ul li a:hover:after {
+  background-color: #f72210;
+}
+
+@media (max-width: 992px) {
+  nav {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    z-index: 666;
+    display: block;
+    position: fixed;
+    width: 220px;
+    height: 100%;
+    right: -220px;
+    top: 40px;
+    -webkit-box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+  }
+  nav .red-shape {
+    display: none;
+  }
+  nav form {
+    position: relative;
+    margin: 0;
+    padding: 0 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  nav form input {
+    width: 200px;
+    margin: 0;
+  }
+  nav form label {
+    position: relative;
+    right: 0;
+  }
+  nav ul {
+    display: block;
+    padding: 0;
+  }
+  nav ul li {
+    margin: 0;
+    border: none;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  nav ul li a {
+    padding: 5px 15px;
+    position: relative;
+    width: 100%;
+  }
+  nav ul li a:after {
+    content: '';
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    -ms-grid-column-align: right;
+        justify-self: right;
+    -webkit-mask-image: url("https://g.newsweek.com/www/images/icon-arrow-right.svg");
+            mask-image: url("https://g.newsweek.com/www/images/icon-arrow-right.svg");
+    display: block;
+    width: 8px;
+    height: 14px;
+    background-color: black;
+  }
+  nav ul li a:hover {
+    background-color: black;
+    color: white;
+  }
+  nav ul li a:hover:after {
+    background-color: #f72210;
+  }
+}
+
+nav.toggle {
+  right: 0;
 }
 
 main {
