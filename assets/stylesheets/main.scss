@@ -203,16 +203,64 @@ nav {
         height: 100%;
         right: 0;
         top: 40px;
+        box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
 
         .red-shape {
             display: none;
         }
 
+        form {
+            position: relative;
+            margin: 0;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            input{
+                width: 200px;
+                margin: 0;
+            }
+            label{
+                position: relative;
+                right: 0;
+            }
+        }
+
         ul {
-            grid-template-columns: 1fr;
-            li{
+            display: block;
+            padding: 0;
+
+            li {
+                margin: 0;
                 border: none;
                 justify-content: start;
+
+                a {
+                    padding: 5px 15px;
+                    position: relative;
+                    width: 100%;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        right: 15px;
+                        top: 10px;
+                        justify-self: right;
+                        mask-image: url("https://g.newsweek.com/www/images/icon-arrow-right.svg");
+                        display: block;
+                        width: 8px;
+                        height: 14px;
+                        background-color: black;
+                    }
+
+                    &:hover {
+                        background-color: black;
+                        color: white;
+                        &:after{
+                            background-color: $red;
+                        }
+                    }
+                }
             }
         }
 
@@ -248,7 +296,7 @@ nav {
                 width: 100%;
                 outline: none;
 
-                ::placeholder {
+                &::placeholder {
                     color: rgba(0, 0, 0, 0)
                 }
             }
