@@ -10607,8 +10607,20 @@ body {
   margin-left: 10px;
 }
 
+ul {
+  padding: 0;
+}
+
 li {
   list-style: none;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: black;
 }
 
 header,
@@ -10626,6 +10638,7 @@ header {
   position: relative;
   background-color: #f72210;
   padding: 20px 0 15px 0;
+  z-index: 665;
 }
 
 header a {
@@ -10804,26 +10817,26 @@ nav .red-shape {
 
 nav form {
   position: absolute;
-  padding-right: 78px;
-  padding-left: 30px;
+  top: 13px;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-top: 14px;
 }
 
 nav form input {
-  margin-left: auto;
+  position: absolute;
+  right: 85px;
+  padding: 0;
   border: none;
   width: 70px;
   background-color: white;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  padding: 2px 0;
 }
 
 nav form input:focus {
-  width: 100%;
+  width: calc(100% - 115px);
   outline: none;
 }
 
@@ -10861,10 +10874,10 @@ nav form input ::placeholder {
 
 nav form label {
   position: absolute;
-  right: 78px;
+  right: 80px;
 }
 
-nav form label svg {
+nav form label img {
   height: 20px;
   width: 20px;
 }
@@ -10872,15 +10885,14 @@ nav form label svg {
 nav ul {
   width: 100%;
   padding: 0;
-  padding-right: 190px;
-  padding-left: 30px;
+  padding-right: 160px;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (auto)[10];
-      grid-template-columns: repeat(10, auto);
+  -ms-grid-columns: (auto)[8];
+      grid-template-columns: repeat(8, auto);
 }
 
 nav ul :nth-child(1) {
@@ -10891,18 +10903,19 @@ nav ul li {
   font-size: 21px;
   line-height: 24px;
   margin: 15px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   border-left: 1px solid #d9d9d9;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 nav ul li a {
   color: black;
   padding: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 nav ul li a:hover {
@@ -10931,6 +10944,8 @@ nav.fixed .red-shape {
 
 nav.fixed form {
   position: relative;
+  top: 0;
+  height: 34px;
   margin: 0;
   padding: 0 15px;
   display: -webkit-box;
@@ -10942,13 +10957,13 @@ nav.fixed form {
 }
 
 nav.fixed form input {
-  width: 200px;
   margin: 0;
+  right: 0;
+  left: 15px;
 }
 
 nav.fixed form label {
-  position: relative;
-  right: 0;
+  right: 15px;
 }
 
 nav.fixed ul {
@@ -10968,6 +10983,9 @@ nav.fixed ul li a {
   padding: 5px 15px;
   position: relative;
   width: 100%;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
 }
 
 nav.fixed ul li a:after {
@@ -11014,6 +11032,8 @@ nav.fixed ul li a:hover:after {
   }
   nav form {
     position: relative;
+    top: 0;
+    height: 34px;
     margin: 0;
     padding: 0 15px;
     display: -webkit-box;
@@ -11024,12 +11044,12 @@ nav.fixed ul li a:hover:after {
             justify-content: space-between;
   }
   nav form input {
-    width: 200px;
     margin: 0;
+    right: 0;
+    left: 15px;
   }
   nav form label {
-    position: relative;
-    right: 0;
+    right: 15px;
   }
   nav ul {
     display: block;
@@ -11046,6 +11066,9 @@ nav.fixed ul li a:hover:after {
     padding: 5px 15px;
     position: relative;
     width: 100%;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
   }
   nav ul li a:after {
     content: '';
@@ -11072,10 +11095,6 @@ nav.fixed ul li a:hover:after {
 
 nav.toggle {
   right: 0;
-}
-
-main {
-  height: 1000px;
 }
 
 footer {
