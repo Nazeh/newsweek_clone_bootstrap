@@ -11131,7 +11131,29 @@ main .block-title ahover {
   text-decoration: none;
 }
 
+main article h1 a,
+main article h2 a,
+main article h3 a,
+main article h4 a,
+main article h5 a,
+main article h6 a {
+  font-weight: bold;
+}
+
+main article .h2 {
+  font-size: 22px;
+  line-height: 24px;
+}
+
+main article .summary {
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  font-weight: 100;
+}
+
 main .wrap {
+  margin-bottom: 10px;
   position: relative;
 }
 
@@ -11146,14 +11168,24 @@ main .wrap .category {
 main .wrap .category a {
   color: #f72210;
   font-size: 17px;
+  text-transform: uppercase;
+}
+
+main .image a {
+  display: block;
+  width: 100%;
 }
 
 main .image a picture {
-  width: 50%;
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
 }
 
 main .image a picture img {
   width: 100%;
+  height: auto;
 }
 
 main .content > div {
@@ -11176,6 +11208,7 @@ main #sticky3 #block-nw-opinion ul li .image {
 
 main #sticky3 #block-nw-opinion ul li .info {
   font-size: 17px;
+  line-height: 21px;
 }
 
 main #sticky3 #block-nw-opinion ul li .info a:hover {

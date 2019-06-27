@@ -413,6 +413,13 @@ nav {
 }
 
 main {
+    @mixin red-hover {
+        &:hover {
+            text-decoration: none;
+            color: $red;
+        }
+    }
+
     padding-top: 20px;
     padding-bottom: 40px;
     display: block;
@@ -443,7 +450,34 @@ main {
         }
     }
 
+    article {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            a {
+                font-weight: bold;
+            }
+        }
+
+        .h2 {
+            font-size: 22px;
+            line-height: 24px;
+        }
+
+        .summary {
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+            font-weight: 100;
+        }
+    }
+
     .wrap {
+        margin-bottom: 10px;
         position: relative;
 
         .category {
@@ -456,53 +490,62 @@ main {
             a {
                 color: $red;
                 font-size: 17px;
+                text-transform: uppercase;
             }
         }
     }
 
     .image {
         a {
-            
+            display: block;
+            width: 100%;
+
             picture {
-                width: 50%;
+                display: block;
+                width: 100%;
+                height: auto;
+                overflow: hidden;
+
                 img {
-                    width: 100%;
+                    width:100%;
+                    height: auto;
                 }
             }
         }
     }
-    .content{
-        >div{
+
+    .content {
+        >div {
             margin-bottom: 30px;
         }
     }
-    @mixin red-hover {
-        &:hover{
-            text-decoration: none;
-            color: $red;
-        }
-    }
 
-    #sticky3{
-        #block-nw-opinion{
-            ul{
-                :nth-child(1){
+    #sticky3 {
+        #block-nw-opinion {
+            ul {
+                :nth-child(1) {
                     padding-top: 0;
                     border-top: none;
                 }
-                li{
+
+                li {
                     border-top: 1px solid rgb(221, 221, 221);
-                    padding : 10px 0;
-                    .image{
+                    padding: 10px 0;
+
+                    .image {
                         margin-right: 16px;
                     }
-                    .info{
+
+                    .info {
                         font-size: 17px;
-                        a{
+                        line-height: 21px;
+
+                        a {
                             @include red-hover();
                         }
                     }
-                    .byline{
+
+                    .byline {
                         color: #555;
                         margin-top: 4px;
                         font-size: 14px;
