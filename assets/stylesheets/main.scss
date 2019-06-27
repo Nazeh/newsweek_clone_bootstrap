@@ -20,6 +20,9 @@ $btn-outline:none;
 @import "fonts";
 
 // Bootstrap Customization and UI
+// div {
+//     background-color: rgba(0, 0, 0, .01)
+// }
 
 body {
     background-color: #f4f5f6;
@@ -52,17 +55,22 @@ body {
     }
 }
 
-ul{
+ul {
     padding: 0;
 }
 
 li {
     list-style: none;
 }
-a{
+
+a {
     color: black;
-    &:hover{
+
+    &:hover {
         color: black;
+        text-decoration: underline;
+        text-decoration-skip: edges;
+        text-decoration-color: $red;
     }
 }
 
@@ -72,13 +80,11 @@ a{
 
 header,
 nav,
-.main-footer {
+main,
+footer {
     max-width: $site-max-width;
     margin: auto;
-}
-
-.main-footer {
-    padding: 0 30px;
+    background-color: white;
 }
 
 header {
@@ -86,6 +92,7 @@ header {
     background-color: $red;
     padding: 20px 0 15px 0;
     z-index: 665;
+
     a {
         color: $white;
     }
@@ -139,11 +146,13 @@ header {
         .cross {
             display: none;
         }
-        &.crossed{
-            .cross{
+
+        &.crossed {
+            .cross {
                 display: block;
             }
-            .bars{
+
+            .bars {
                 display: none;
             }
         }
@@ -278,7 +287,7 @@ nav {
         width: 100%;
         padding: 0;
         padding-right: 160px;
-        
+
         margin: 0;
         box-sizing: border-box;
         display: grid;
@@ -286,7 +295,7 @@ nav {
 
         :nth-child(1) {
             border: none;
- 
+
         }
 
         li {
@@ -301,6 +310,7 @@ nav {
                 width: 100%;
                 display: flex;
                 justify-content: center;
+
                 &:hover {
                     color: $red;
                     text-decoration: none;
@@ -309,7 +319,7 @@ nav {
         }
     }
 
-    @mixin navbar-fixed{
+    @mixin navbar-fixed {
         z-index: 666;
         display: block;
         position: fixed;
@@ -333,12 +343,13 @@ nav {
             display: flex;
             justify-content: space-between;
 
-            input{
+            input {
                 margin: 0;
                 right: 0;
                 left: 15px;
             }
-            label{
+
+            label {
                 right: 15px;
 
             }
@@ -375,7 +386,8 @@ nav {
                     &:hover {
                         background-color: black;
                         color: white;
-                        &:after{
+
+                        &:after {
                             background-color: $red;
                         }
                     }
@@ -395,12 +407,114 @@ nav {
         @include navbar-fixed()
     }
 
-    &.toggle{
+    &.toggle {
         right: 0;
     }
 }
 
 main {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    display: block;
+
+    &.container-fluid {
+        @media (min-width: map-get($grid-breakpoints, lg)) {
+            >.row {
+                margin: 0;
+                display: grid;
+                grid-template-columns: 71% 29%;
+            }
+        }
+
+    }
+
+    .block-title {
+        color: rgba(3, 3, 3, .4);
+        padding-bottom: 11px;
+        text-transform: uppercase;
+        line-height: 1em;
+
+        a {
+            color: rgba(3, 3, 3, .4);
+
+            &hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .wrap {
+        position: relative;
+
+        .category {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 8px 15px;
+            background-color: rgba(255, 255, 255, .9);
+
+            a {
+                color: $red;
+                font-size: 17px;
+            }
+        }
+    }
+
+    .image {
+        a {
+            
+            picture {
+                width: 50%;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .content{
+        >div{
+            margin-bottom: 30px;
+        }
+    }
+    @mixin red-hover {
+        &:hover{
+            text-decoration: none;
+            color: $red;
+        }
+    }
+
+    #sticky3{
+        #block-nw-opinion{
+            ul{
+                :nth-child(1){
+                    padding-top: 0;
+                    border-top: none;
+                }
+                li{
+                    border-top: 1px solid rgb(221, 221, 221);
+                    padding : 10px 0;
+                    .image{
+                        margin-right: 16px;
+                    }
+                    .info{
+                        font-size: 17px;
+                        a{
+                            @include red-hover();
+                        }
+                    }
+                    .byline{
+                        color: #555;
+                        margin-top: 4px;
+                        font-size: 14px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+        }
+    }
+
+
 }
 
 footer {
