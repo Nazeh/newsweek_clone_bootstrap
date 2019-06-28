@@ -27,6 +27,9 @@ $(document).ready(function () {
         }else {
             header.addClass('fixed');
             navbar.addClass('fixed');
+            navbar.css({
+                "top": "40px"
+            });
             $('main').css("margin-top","40px");
 
             if (currentScrollTop > 40) {
