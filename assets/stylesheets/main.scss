@@ -450,16 +450,24 @@ main {
         }
     }
 
-    article {
+    article,
+    .sponsor {
+        padding-bottom: 20px;
 
         h1,
         h2,
         h3,
-        h4,
-        h5,
-        h6 {
+        h4 {
             a {
                 font-weight: bold;
+            }
+        }
+
+        h3 {
+            font-size: 24px;
+
+            @media (max-width: map-get($grid-breakpoints, md)) {
+                font-size: 20px;
             }
         }
 
@@ -473,6 +481,27 @@ main {
             font-family: Arial, Helvetica, sans-serif;
             color: #333;
             font-weight: 100;
+
+            @media (max-width: map-get($grid-breakpoints, md)) {
+                font-size: 13px;
+            }
+        }
+
+        &.clearfix {
+            padding: 14px 0;
+            border-top: 1px solid rgb(221, 221, 221);
+
+            .image {
+                width: 38%;
+                float: left;
+                margin-right: 15px;
+            }
+
+            h4 {
+                font-size: 17px;
+                line-height: 18px;
+                margin-bottom: 10px;
+            }
         }
     }
 
@@ -504,23 +533,70 @@ main {
                 display: block;
                 width: 100%;
                 height: auto;
-                overflow: hidden;
+
 
                 img {
-                    width:100%;
+                    width: 100%;
                     height: auto;
                 }
             }
         }
     }
 
-    .content {
-        >div {
-            margin-bottom: 30px;
+    .sponsor {
+        .wrap {
+            margin: 0;
+        }
+
+        .shuffle {
+            margin: 0;
+
+            dt {
+                display: block;
+
+                a {
+                    display: block;
+
+                    span {
+                        display: block;
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        padding-bottom: 66.75%;
+                    }
+                }
+            }
+        }
+
+        .category {
+            color: #3581f4;
+        }
+
+        .info {
+            padding: 20px;
+            border: 1px solid rgb(230, 230, 230);
+        }
+    }
+
+    #sticky2 {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+
+        #block-nw-home-featured-more {
+            flex-grow: 1;
+
+            .content {
+                position: sticky;
+                top: 0;
+            }
         }
     }
 
     #sticky3 {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+
         #block-nw-opinion {
             ul {
                 :nth-child(1) {
@@ -554,6 +630,22 @@ main {
                 }
             }
 
+        }
+
+        #block-sticky {
+            flex-grow: 1;
+
+            .content {
+                position: sticky;
+                top: 0;
+            }
+
+            flex-grow: 1;
+
+            .content {
+                position: sticky;
+                top: 0;
+            }
         }
     }
 

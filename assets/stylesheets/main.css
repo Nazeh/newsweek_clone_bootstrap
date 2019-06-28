@@ -11131,25 +11131,73 @@ main .block-title ahover {
   text-decoration: none;
 }
 
+main article,
+main .sponsor {
+  padding-bottom: 20px;
+}
+
 main article h1 a,
 main article h2 a,
 main article h3 a,
 main article h4 a,
-main article h5 a,
-main article h6 a {
+main .sponsor h1 a,
+main .sponsor h2 a,
+main .sponsor h3 a,
+main .sponsor h4 a {
   font-weight: bold;
 }
 
-main article .h2 {
+main article h3,
+main .sponsor h3 {
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  main article h3,
+  main .sponsor h3 {
+    font-size: 20px;
+  }
+}
+
+main article .h2,
+main .sponsor .h2 {
   font-size: 22px;
   line-height: 24px;
 }
 
-main article .summary {
+main article .summary,
+main .sponsor .summary {
   font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
   color: #333;
   font-weight: 100;
+}
+
+@media (max-width: 768px) {
+  main article .summary,
+  main .sponsor .summary {
+    font-size: 13px;
+  }
+}
+
+main article.clearfix,
+main .sponsor.clearfix {
+  padding: 14px 0;
+  border-top: 1px solid #dddddd;
+}
+
+main article.clearfix .image,
+main .sponsor.clearfix .image {
+  width: 38%;
+  float: left;
+  margin-right: 15px;
+}
+
+main article.clearfix h4,
+main .sponsor.clearfix h4 {
+  font-size: 17px;
+  line-height: 18px;
+  margin-bottom: 10px;
 }
 
 main .wrap {
@@ -11180,7 +11228,6 @@ main .image a picture {
   display: block;
   width: 100%;
   height: auto;
-  overflow: hidden;
 }
 
 main .image a picture img {
@@ -11188,8 +11235,70 @@ main .image a picture img {
   height: auto;
 }
 
-main .content > div {
-  margin-bottom: 30px;
+main .sponsor .wrap {
+  margin: 0;
+}
+
+main .sponsor .shuffle {
+  margin: 0;
+}
+
+main .sponsor .shuffle dt {
+  display: block;
+}
+
+main .sponsor .shuffle dt a {
+  display: block;
+}
+
+main .sponsor .shuffle dt a span {
+  display: block;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 66.75%;
+}
+
+main .sponsor .category {
+  color: #3581f4;
+}
+
+main .sponsor .info {
+  padding: 20px;
+  border: 1px solid #e6e6e6;
+}
+
+main #sticky2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  height: 100%;
+}
+
+main #sticky2 #block-nw-home-featured-more {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+main #sticky2 #block-nw-home-featured-more .content {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+main #sticky3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  height: 100%;
 }
 
 main #sticky3 #block-nw-opinion ul :nth-child(1) {
@@ -11221,6 +11330,25 @@ main #sticky3 #block-nw-opinion ul li .byline {
   margin-top: 4px;
   font-size: 14px;
   text-transform: uppercase;
+}
+
+main #sticky3 #block-sticky {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  flex-grow: 1;
+}
+
+main #sticky3 #block-sticky .content {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+main #sticky3 #block-sticky .content {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 footer {
