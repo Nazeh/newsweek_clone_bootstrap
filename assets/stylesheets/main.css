@@ -10578,8 +10578,9 @@ body {
 }
 
 .btn {
+  width: auto;
   height: 34px;
-  padding: 0 12px;
+  padding: 10px 10px 10px 12px;
   text-transform: uppercase;
   font-size: 14px;
   line-height: 14px;
@@ -10588,6 +10589,7 @@ body {
   background-color: #f72210;
   border-radius: 0;
   border: 0;
+  font-size: 18px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10602,6 +10604,7 @@ body {
 }
 
 .btn svg {
+  width: 10px;
   height: 14px;
   fill: #fff;
   margin-left: 10px;
@@ -11106,31 +11109,6 @@ main {
   display: block;
 }
 
-@media (min-width: 992px) {
-  main.container-fluid > .row {
-    margin: 0;
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 71% 29%;
-        grid-template-columns: 71% 29%;
-  }
-}
-
-main .block-title {
-  color: rgba(3, 3, 3, 0.4);
-  padding-bottom: 11px;
-  text-transform: uppercase;
-  line-height: 1em;
-}
-
-main .block-title a {
-  color: rgba(3, 3, 3, 0.4);
-}
-
-main .block-title ahover {
-  text-decoration: none;
-}
-
 main article,
 main .sponsor {
   padding-bottom: 20px;
@@ -11140,10 +11118,12 @@ main article h1 a,
 main article h2 a,
 main article h3 a,
 main article h4 a,
+main article h5 a,
 main .sponsor h1 a,
 main .sponsor h2 a,
 main .sponsor h3 a,
-main .sponsor h4 a {
+main .sponsor h4 a,
+main .sponsor h5 a {
   font-weight: bold;
 }
 
@@ -11188,9 +11168,23 @@ main .sponsor.clearfix {
 
 main article.clearfix .image,
 main .sponsor.clearfix .image {
-  width: 38%;
+  width: 135px;
   float: left;
   margin-right: 15px;
+}
+
+@media (max-width: 768px) {
+  main article.clearfix .image,
+  main .sponsor.clearfix .image {
+    width: 258px;
+  }
+}
+
+@media (max-width: 481px) {
+  main article.clearfix .image,
+  main .sponsor.clearfix .image {
+    width: 135px;
+  }
 }
 
 main article.clearfix h4,
@@ -11198,6 +11192,39 @@ main .sponsor.clearfix h4 {
   font-size: 17px;
   line-height: 18px;
   margin-bottom: 10px;
+}
+
+main .btn-main {
+  height: 38px;
+}
+
+@media (min-width: 992px) {
+  main.container-fluid > .row {
+    margin: 0;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 71% 29%;
+        grid-template-columns: 71% 29%;
+  }
+}
+
+main .block-title {
+  color: rgba(3, 3, 3, 0.4);
+  padding-bottom: 11px;
+  text-transform: uppercase;
+  line-height: 1em;
+}
+
+main .block-title a {
+  color: rgba(3, 3, 3, 0.4);
+}
+
+main .block-title ahover {
+  text-decoration: none;
+}
+
+main .subfeature2 {
+  margin-bottom: 30px;
 }
 
 main .wrap {
@@ -11235,6 +11262,12 @@ main .image a picture img {
   height: auto;
 }
 
+main .sponsor {
+  max-width: 330px;
+  margin: auto;
+  padding-bottom: 30px;
+}
+
 main .sponsor .wrap {
   margin: 0;
 }
@@ -11265,6 +11298,20 @@ main .sponsor .category {
 main .sponsor .info {
   padding: 20px;
   border: 1px solid #e6e6e6;
+}
+
+main .related {
+  border-top: 1px solid #d9d9d9;
+}
+
+main .related li {
+  padding: 10px 0;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+main .related a:hover {
+  text-decoration: none;
+  color: #f72210;
 }
 
 main #sticky2 {
@@ -11332,23 +11379,220 @@ main #sticky3 #block-nw-opinion ul li .byline {
   text-transform: uppercase;
 }
 
-main #sticky3 #block-sticky {
+main #sticky3 .latest-news :nth-child(1) {
+  border: none;
+}
+
+main #sticky3 .latest-news li {
+  padding: 14px 0;
+  border-top: 1px solid #dddddd;
+}
+
+main #sticky3 .latest-news li picture {
+  width: 135px;
+  float: left;
+  margin-right: 15px;
+}
+
+@media (max-width: 768px) {
+  main #sticky3 .latest-news li picture {
+    width: 258px;
+  }
+}
+
+@media (max-width: 481px) {
+  main #sticky3 .latest-news li picture {
+    width: 135px;
+  }
+}
+
+main #sticky3 .latest-news li .info {
+  font-size: 17px;
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+
+main #sticky3 .newsletter-signup {
+  max-width: 300px;
+  margin: 0 auto 30px;
+  padding: 20px;
+  background-color: #f4f5f6;
+  border: 1px solid #e5e5e5;
+}
+
+main #sticky3 .newsletter-signup .n-title {
+  font-size: 19px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+main #sticky3 .newsletter-signup .signup {
+  margin-bottom: 10px;
+  width: 100px;
+  background-color: #666;
+}
+
+main #sticky3 .newsletter-signup .signup:hover {
+  background-color: #999;
+}
+
+main #sticky3 .newsletter-signup .lk-5 {
+  font-size: 15px;
+  line-height: 15px;
+}
+
+main #block-sticky {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  flex-grow: 1;
 }
 
-main #sticky3 #block-sticky .content {
+main #block-sticky .content {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
 
-main #sticky3 #block-sticky .content {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+main .icon-n {
+  display: block;
+  width: 29px;
+  height: 28px;
+  background: url(https://g.newsweek.com/www/images/logo-n1.svg) center/contain no-repeat #f72210;
+  margin-right: 10px;
+}
+
+main .lk:after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  margin-left: 10px;
+  background-color: white;
+  -webkit-mask: url(https://g.newsweek.com/www/images/icon-arrow-right.svg) center/contain no-repeat;
+          mask: url(https://g.newsweek.com/www/images/icon-arrow-right.svg) center/contain no-repeat;
+}
+
+main .signup {
+  padding: 10px;
+  line-height: 18px;
+  width: 100px;
+}
+
+main .subscribe {
+  width: 124px;
+}
+
+main .page-bottom .content {
+  margin-bottom: 20px;
+}
+
+main .page-bottom .n-title {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 12px;
+  font-size: 19px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .page-bottom .magazine .d-flex {
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+main .page-bottom .magazine .d-flex .wrap {
+  margin: 0;
+}
+
+main .page-bottom .magazine .d-flex a :after {
+  fill: black;
+}
+
+main .page-bottom .magazine .d-flex .lk {
+  color: black;
+  background-color: #f4f5f6;
+}
+
+main .page-bottom .magazine .d-flex .lk:hover {
+  background-color: #dbdcdd;
+}
+
+main .page-bottom .magazine .d-flex .lk:after {
+  background-color: black;
+}
+
+main .page-bottom .magazine article .image {
+  width: 100%;
+}
+
+main .page-bottom .magazine article .image a {
+  display: block;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  main .page-bottom .magazine article .image a picture {
+    display: block;
+    position: relative;
+    padding-bottom: 100%;
+    overflow: hidden;
+  }
+  main .page-bottom .magazine article .image a picture img {
+    -webkit-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: auto;
+    height: 100%;
+    max-width: inherit;
+  }
+}
+
+main .page-bottom .magazine article .bigshots {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 7px;
+  background-color: #f72210;
+  color: white;
+  margin-right: 7px;
+}
+
+main .page-bottom .magazine article .category {
+  font-size: 16px;
+  line-height: 26px;
+  text-transform: uppercase;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+main .page-bottom .magazine article .category .mag-cat {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 7px;
+  background-color: #f72210;
+  color: white;
+  margin-right: 7px;
+}
+
+main .page-bottom .magazine article .category a {
+  color: #f72210;
+}
+
+main .page-bottom .magazine .bottom {
+  padding-top: 30px;
 }
 
 footer {

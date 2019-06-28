@@ -29,8 +29,9 @@ body {
 }
 
 .btn {
+    width: auto;
     height: 34px;
-    padding: 0 12px;
+    padding: 10px 10px 10px 12px;
     text-transform: uppercase;
     font-size: 14px;
     line-height: 14px;
@@ -39,6 +40,7 @@ body {
     background-color: $red;
     border-radius: 0;
     border: 0;
+    font-size: 18px;
 
     display: flex;
     align-items: center;
@@ -49,6 +51,7 @@ body {
     }
 
     svg {
+        width: 10px;
         height: 14px;
         fill: $white;
         margin-left: 10px;
@@ -413,6 +416,75 @@ nav {
 }
 
 main {
+
+    article,
+    .sponsor {
+        padding-bottom: 20px;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            a {
+                font-weight: bold;
+            }
+        }
+
+        h3 {
+            font-size: 24px;
+
+            @media (max-width: map-get($grid-breakpoints, md)) {
+                font-size: 20px;
+            }
+        }
+
+        .h2 {
+            font-size: 22px;
+            line-height: 24px;
+        }
+
+        .summary {
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+            font-weight: 100;
+
+            @media (max-width: map-get($grid-breakpoints, md)) {
+                font-size: 13px;
+            }
+        }
+
+        &.clearfix {
+            padding: 14px 0;
+            border-top: 1px solid rgb(221, 221, 221);
+
+            .image {
+                width: 135px;
+                float: left;
+                margin-right: 15px;
+
+                @media (max-width: map-get($grid-breakpoints, md)) {
+                    width: 258px;
+                }
+
+                @media (max-width: 481px) {
+                    width: 135px;
+                }
+            }
+
+            h4 {
+                font-size: 17px;
+                line-height: 18px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .btn-main {
+        height: 38px;
+    }
+
     @mixin red-hover {
         &:hover {
             text-decoration: none;
@@ -450,60 +522,11 @@ main {
         }
     }
 
-    article,
-    .sponsor {
-        padding-bottom: 20px;
-
-        h1,
-        h2,
-        h3,
-        h4 {
-            a {
-                font-weight: bold;
-            }
-        }
-
-        h3 {
-            font-size: 24px;
-
-            @media (max-width: map-get($grid-breakpoints, md)) {
-                font-size: 20px;
-            }
-        }
-
-        .h2 {
-            font-size: 22px;
-            line-height: 24px;
-        }
-
-        .summary {
-            font-size: 15px;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #333;
-            font-weight: 100;
-
-            @media (max-width: map-get($grid-breakpoints, md)) {
-                font-size: 13px;
-            }
-        }
-
-        &.clearfix {
-            padding: 14px 0;
-            border-top: 1px solid rgb(221, 221, 221);
-
-            .image {
-                width: 38%;
-                float: left;
-                margin-right: 15px;
-            }
-
-            h4 {
-                font-size: 17px;
-                line-height: 18px;
-                margin-bottom: 10px;
-            }
-        }
+    .subfeature2 {
+        margin-bottom: 30px;
     }
+
+
 
     .wrap {
         margin-bottom: 10px;
@@ -540,10 +563,15 @@ main {
                     height: auto;
                 }
             }
+
         }
     }
 
     .sponsor {
+        max-width: 330px;
+        margin: auto;
+        padding-bottom: 30px;
+
         .wrap {
             margin: 0;
         }
@@ -574,6 +602,19 @@ main {
         .info {
             padding: 20px;
             border: 1px solid rgb(230, 230, 230);
+        }
+    }
+
+    .related {
+        border-top: 1px solid #d9d9d9;
+
+        li {
+            padding: 10px 0;
+            border-bottom: 1px solid #d9d9d9;
+        }
+
+        a {
+            @include red-hover()
         }
     }
 
@@ -632,25 +673,225 @@ main {
 
         }
 
-        #block-sticky {
-            flex-grow: 1;
-
-            .content {
-                position: sticky;
-                top: 0;
+        .latest-news {
+            :nth-child(1) {
+                border: none;
             }
 
-            flex-grow: 1;
+            li {
+                padding: 14px 0;
+                border-top: 1px solid rgb(221, 221, 221);
 
-            .content {
-                position: sticky;
-                top: 0;
+                picture {
+                    width: 135px;
+                    float: left;
+                    margin-right: 15px;
+
+                    @media (max-width: map-get($grid-breakpoints, md)) {
+                        width: 258px;
+                    }
+
+                    @media (max-width: 481px) {
+                        width: 135px;
+                    }
+                }
+
+                .info {
+                    font-size: 17px;
+                    line-height: 18px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .newsletter-signup {
+            max-width: 300px;
+            margin: 0 auto 30px;
+            padding: 20px;
+            background-color: #f4f5f6;
+            border: 1px solid #e5e5e5;
+
+            .n-title {
+                font-size: 19px;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+            }
+
+            .signup {
+                margin-bottom: 10px;
+                width: 100px;
+                background-color: #666;
+
+                &:hover {
+                    background-color: #999;
+                }
+            }
+
+            .lk-5 {
+                font-size: 15px;
+                line-height: 15px;
             }
         }
     }
 
 
+    #block-sticky {
+        flex-grow: 1;
+
+        .content {
+            position: sticky;
+            top: 0;
+        }
+    }
+
+    .icon-n {
+        display: block;
+        width: 29px;
+        height: 28px;
+        background: url(https://g.newsweek.com/www/images/logo-n1.svg) center/contain no-repeat #f72210;
+        margin-right: 10px;
+    }
+
+    .lk:after {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 14px;
+        margin-left: 10px;
+        background-color: white;
+        mask: url(https://g.newsweek.com/www/images/icon-arrow-right.svg) center/contain no-repeat;
+    }
+
+    .signup {
+        padding: 10px;
+        line-height: 18px;
+        width: 100px;
+    }
+
+    .subscribe {
+        width: 124px;
+    }
+
+    .page-bottom {
+        .content{
+            margin-bottom: 20px;
+        }
+        .n-title {
+            width: 100%;
+            display: flex;
+            border-bottom: 1px solid #d9d9d9;
+            padding-bottom: 12px;
+            font-size: 19px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            justify-content: center;
+        }
+
+        .magazine {
+            .d-flex {
+                align-items: flex-end;
+
+                .wrap {
+                    margin: 0;
+                }
+
+                a {
+                    :after {
+                        fill: black;
+                    }
+                }
+
+                .lk {
+                    color: black;
+                    background-color: #f4f5f6;
+
+                    &:hover {
+                        background-color: #dbdcdd;
+                    }
+
+                    &:after {
+                        background-color: black;
+                    }
+
+                }
+            }
+
+            article {
+                .image {
+                    width: 100%;
+
+                    a {
+                        display: block;
+                        width: 100%;
+
+                        @media (min-width: map-get($grid-breakpoints, md)) {
+                            picture {
+                                display: block;
+                                position: relative;
+                                padding-bottom: 100%;
+                                overflow: hidden;
+
+                                img {
+                                    transform: translate(-50%, 0%);
+                                    position: absolute;
+                                    top: 0;
+                                    left: 50%;
+                                    width: auto;
+                                    height: 100%;
+                                    max-width: inherit;
+                                }
+                            }
+                        }
+                    }
+
+                    h5 {}
+                }
+
+                .bigshots {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    display: inline-block;
+                    box-sizing: border-box;
+                    padding: 0 7px;
+                    background-color: $red;
+                    color: white;
+                    margin-right: 7px;
+                }
+
+                .category {
+                    font-size: 16px;
+                    line-height: 26px;
+                    text-transform: uppercase;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+
+                    .mag-cat {
+                        display: inline-block;
+                        box-sizing: border-box;
+                        padding: 0 7px;
+                        background-color: $red;
+                        color: white;
+                        margin-right: 7px;
+
+                    }
+
+                    a {
+                        color: $red;
+                    }
+                }
+            }
+
+            .bottom {
+                padding-top: 30px;
+            }
+        }
+
+    }
 }
+
+
+
 
 footer {
     color: #666;
