@@ -11290,15 +11290,7 @@ main .sponsor .shuffle {
   margin: 0;
 }
 
-main .sponsor .shuffle dt {
-  display: block;
-}
-
-main .sponsor .shuffle dt a {
-  display: block;
-}
-
-main .sponsor .shuffle dt a span {
+main .sponsor .shuffle span {
   display: block;
   background-size: cover;
   background-repeat: no-repeat;

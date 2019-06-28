@@ -145,7 +145,7 @@ header {
     .navbar-toggler {
         display: none;
 
-        svg{
+        svg {
             width: 16px;
             height: 16px;
         }
@@ -591,20 +591,14 @@ main {
         .shuffle {
             margin: 0;
 
-            dt {
-                display: block;
-
-                a {
+            
+                span {
                     display: block;
-
-                    span {
-                        display: block;
-                        background-size: cover;
-                        background-repeat: no-repeat;
-                        padding-bottom: 66.75%;
-                    }
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    padding-bottom: 66.75%;
                 }
-            }
+           
         }
 
         .category {
@@ -1009,18 +1003,18 @@ main {
                 display: flex;
                 flex-direction: column;
 
-                .image{
+                .image {
                     max-width: 191px;
                     width: 100%;
                     height: auto;
 
-                    @media (max-width: map-get($grid-breakpoints , md ) ) {
+                    @media (max-width: map-get($grid-breakpoints, md)) {
                         height: 160px;
                         max-width: 100%;
                     }
                 }
 
-                .info{
+                .info {
                     border: 1px solid #ebebeb;
                     padding: 20px;
                 }
