@@ -20,6 +20,9 @@ $(document).ready(function () {
                 "transition": "none"
             });
             navbar.removeClass('fixed')
+            navbar.css({
+                "top": "0"
+            });
             $('main').css("margin-top","0");
         }else {
             header.addClass('fixed');

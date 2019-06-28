@@ -11920,9 +11920,9 @@ header.fixed .navbar-toggler svg {
 }
 
 nav {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 95px;
+  position: -webkit-relative;
+  position: relative;
+  
   background-color: white;
   border-bottom: 2px solid #f4f5f6;
 }
