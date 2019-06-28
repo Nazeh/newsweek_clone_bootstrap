@@ -145,6 +145,11 @@ header {
     .navbar-toggler {
         display: none;
 
+        svg{
+            width: 16px;
+            height: 16px;;
+        }
+
         .cross {
             display: none;
         }

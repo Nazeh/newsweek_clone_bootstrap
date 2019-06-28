@@ -10698,6 +10698,11 @@ header .navbar-toggler {
   display: none;
 }
 
+header .navbar-toggler svg {
+  width: 16px;
+  height: 16px;
+}
+
 header .navbar-toggler .cross {
   display: none;
 }
