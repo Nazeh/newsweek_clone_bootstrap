@@ -83,8 +83,7 @@ a {
 
 header,
 nav,
-main,
-footer {
+.main-footer {
     max-width: $site-max-width;
     margin: auto;
     background-color: white;
@@ -543,6 +542,10 @@ main {
                 color: $red;
                 font-size: 17px;
                 text-transform: uppercase;
+
+                &:hover {
+                    text-decoration: none;
+                }
             }
         }
     }
@@ -773,9 +776,14 @@ main {
     }
 
     .page-bottom {
-        .content{
+        @media (min-width: map-get($grid-breakpoints ,md )){
+            margin: 0 15px;
+        }
+
+        .content {
             margin-bottom: 20px;
         }
+
         .n-title {
             width: 100%;
             display: flex;
@@ -878,12 +886,54 @@ main {
 
                     a {
                         color: $red;
+
+                        &:hover {
+                            text-decoration: none;
+                        }
                     }
                 }
             }
 
             .bottom {
                 padding-top: 30px;
+            }
+        }
+
+        .picture-galleries {
+            article{
+                padding-bottom: 40px;
+            }
+            .image {
+                margin-bottom: 20px;
+                position: relative;
+
+                .count-link {
+                    width: 70px;
+                    height: 52px;
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    font-weight: bold;
+                    font-size: 20px;
+                    line-height: 58px;
+                    text-indent: 5px;
+                    text-align: center;
+                    background: url(https://g.newsweek.com/themes/newsweek/images/icon-slideshows-nw.png) 0 0/contain no-repeat;
+                    color: #e9212e;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            h4 {
+                font-size: 22px;
+
+                @media (max-width: map-get($grid-breakpoints, md)) {
+                    font-size: 18px;
+                }
             }
         }
 
@@ -894,6 +944,7 @@ main {
 
 
 footer {
+    margin: 0 30px;
     color: #666;
     font-family: $font-family-alternative;
     font-weight: normal;
@@ -902,10 +953,9 @@ footer {
 
     border-top: 2px solid rgb(244, 245, 246);
 
-    @media (min-width:map-get($grid-breakpoints, lg)) {
-        &.container-fluid {
-            padding: 30px;
-        }
+    @media (max-width:map-get($grid-breakpoints, lg)) {
+        margin: 0 15px;
+        padding:30px  15px;
     }
 
     a {
