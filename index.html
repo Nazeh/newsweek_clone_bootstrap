@@ -302,7 +302,7 @@
                             </div>
                             <div class="col-md-7  order-1 order-md-2">
                                 <div id="sticky2">
-                                    <div id="block-nw-home-featured-story" class="block block-nw">
+                                    <section id="block-nw-home-featured-story" class="block block-nw">
                                         <div class="content">
                                             <div class="feature2">
                                                 <div class="block-title">
@@ -334,8 +334,8 @@
                                                 </article>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div id="block-nw-home-featured-more" class="block block-nw">
+                                    </section>
+                                    <section id="block-nw-home-featured-more" class="block block-nw">
                                         <div class="content">
                                             <div class="feature2">
                                                 <div class="block-title">
@@ -504,7 +504,7 @@
                                                 </article>
                                             </div>
                                         </div>
-                                    </div>
+                                    </section>
                                 </div>
                             </div>
                         </div>
@@ -513,7 +513,7 @@
                 <div class="col-lg content-right">
 
                     <div id="sticky3" style="position: static; left: 0px; top: 0px; width: auto;">
-                        <div id="block-nw-opinion" class="block block-nw">
+                        <section id="block-nw-opinion" class="block block-nw">
                             <div class="content">
                                 <div class="feature2 subfeature2">
                                     <div class="block-title">
@@ -604,8 +604,8 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                        <div id="block-nw-subfeatured" class="block block-nw" data-gtm-action="Latest_Headlines">
+                        </section>
+                        <section id="block-nw-subfeatured" class="block block-nw" data-gtm-action="Latest_Headlines">
                             <div class="content">
                                 <div class="feature2 subfeature2">
                                     <div class="block-title">
@@ -722,7 +722,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </section>
                         <div id="block-sticky">
                             <div class="content">
                                 <div id="block-ibtmedia-special-item-right" class="block block-ibtmedia-special-item">
@@ -796,7 +796,7 @@
                 </div>
             </div>
             <div class="page-bottom">
-                <div id="block-nw-magazine-in-magazine" class="block block-nw-magazine"
+                <section id="block-nw-magazine-in-magazine" class="block block-nw-magazine"
                     data-gtm-action="In_The_Magazine">
                     <div class="content">
                         <div class="magazine">
@@ -952,48 +952,12 @@
 
                                     </div>
                                 </article>
-                                <script>
-                                    Drupal.cmd.push(function () {
 
-                                        jQuery(".big-shots a").unbind('click').click(function () {
-
-                                            var data_id = jQuery(this).attr('data-target');
-                                            jQuery.ajax({
-                                                url: "/tool/bigshot?cck=?",
-                                                data: {
-                                                    'id_ids': data_id,
-                                                    'headline': 'Big Shots',
-                                                    'original': jQuery(document).scrollTop()
-                                                },
-                                                dataType: "jsonp",
-                                                success: function (json) {
-
-                                                    if (json.id_id) location.hash =
-                                                        "big-shots/" + json.id_id;
-                                                    else location.hash = "big-shots";
-
-                                                    //		console.log(json.html);
-                                                    jQuery("<div />", {
-                                                        "id": "big-shots-overlay"
-                                                    }).appendTo("body");
-                                                    jQuery("html,body").css({
-                                                        "overflow": "hidden"
-                                                    });
-
-                                                    jQuery("#big-shots-overlay").show()
-                                                        .html(
-                                                            json.html);
-
-                                                }
-                                            });
-                                        });
-                                    });
-                                </script>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div id="block-nw-editors-pick" class="block block-nw">
+                </section>
+                <section id="block-nw-editors-pick" class="block block-nw">
                     <div class="content">
                         <div class="n-title"><span class="icon-n"></span>
                             EDITOR'S PICK</div>
@@ -1153,9 +1117,9 @@
                                 </div>
                             </article>
                         </div>
-                    </div>
-                </div>
-                <div id="block-fusion-arbitrage-picture-galleries" class="block block-fusion-arbitrage">
+                        </d>
+                </section>
+                <section id="block-fusion-arbitrage-picture-galleries" class="block block-fusion-arbitrage">
                     <div class="content">
                         <div class="picture-galleries nw">
                             <div class="n-title flex-xs jc-c ai-c"><span class="icon-n"></span>
@@ -1244,7 +1208,8 @@
                                             <span class="overlay article-overlay"></span>
                                         </a>
                                         <a href="/best-cities-dogs-1427770" class="count-link">26</a></div>
-                                    <h4><a href="/best-cities-dogs-1427770" class="article-link">The Most Dog-Friendly
+                                    <h4><a href="/best-cities-dogs-1427770" class="article-link">The Most
+                                            Dog-Friendly
                                             Cities in America<span class="overlay article-overlay"></span></a></h4>
                                 </article>
                                 <article class="col-sm-4">
@@ -1260,18 +1225,19 @@
                                         </a>
                                         <a href="/d-day-photos-1391363" class="count-link">17</a></div>
                                     <h4><a href="/d-day-photos-1391363" class="article-link">D-Day: Photos from the
-                                            Invasion of Normandy<span class="overlay article-overlay"></span></a></h4>
+                                            Invasion of Normandy<span class="overlay article-overlay"></span></a>
+                                    </h4>
                                 </article>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <div id="fb-root" class=" fb_reset">
-                    
+
                 </div>
             </div>
-            <div class="subscribe-block">
+            <section class="subscribe-block">
                 <div class="d-flex row">
                     <div class=" col-lg-7  fd-c">
                         <div class="block-title red ">Subscribe</div>
@@ -1304,12 +1270,13 @@
                                 <h3>Daily Briefing</h3>
                                 <p>Take back your inbox.
                                     Sign up for our newsletter and start making sense of the world around you.</p>
-                                <a href=""><span class="mx-auto mx-md-0 lk red btn btn-main signup">Sign Up</span></a>
+                                <a href=""><span class="mx-auto mx-md-0 lk red btn btn-main signup">Sign
+                                        Up</span></a>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </main>
 
         <footer class="footer">
