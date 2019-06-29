@@ -1,0 +1,1118 @@
+// variables
+$site-max-width:1310px;
+
+$red: #f72210;
+
+$font-family-sans-serif: 'Roboto condensed';
+$font-weight-base:700;
+$font-family-alternative:Arial,
+Helvetica,
+sans-serif;
+
+$btn-focus-box-shadow:none;
+$btn-outline:none;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Customization start
+
+// fonts
+@import "fonts";
+
+// Bootstrap Customization and UI
+// div {
+//     background-color: rgba(0, 0, 0, .01)
+// }
+
+body {
+    background-color: #f4f5f6;
+}
+
+.btn {
+    width: auto;
+    height: 34px;
+    padding: 10px 10px 10px 12px;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 700;
+    color: $white;
+    background-color: $red;
+    border-radius: 0;
+    border: 0;
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        color: white;
+        text-decoration: none;
+    }
+
+    svg {
+        width: 10px;
+        height: 14px;
+        fill: $white;
+        margin-left: 10px;
+    }
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: black;
+
+    &:hover {
+        color: black;
+        text-decoration: underline;
+        text-decoration-skip: edges;
+        text-decoration-color: $red;
+    }
+}
+
+
+// site containing
+
+
+header,
+nav,
+.main-footer {
+    max-width: $site-max-width;
+    margin: auto;
+    background-color: white;
+}
+
+header {
+    position: relative;
+    background-color: $red;
+    padding: 20px 0 15px 0;
+    z-index: 665;
+
+    a {
+        color: $white;
+    }
+
+    .brand {
+        height: 60px;
+        justify-content: center;
+
+        a {
+            display: block;
+            position: relative;
+            height: 100%;
+            width: 396px;
+
+            svg {
+                position: absolute;
+                top: 0;
+                fill: $white;
+                height: 100%;
+
+            }
+        }
+    }
+
+    .date div {
+        font-weight: normal;
+        line-height: 34px;
+        padding: 0 15px;
+    }
+
+    .header-right {
+        height: 100%;
+
+        a {
+            font-size: 18px;
+
+            &.lk-3 {
+                color: $red;
+                background-color: $white;
+
+                svg {
+                    fill: $red;
+                }
+            }
+        }
+    }
+
+    .navbar-toggler {
+        display: none;
+
+        svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .cross {
+            display: none;
+        }
+
+        &.crossed {
+            .cross {
+                display: block;
+            }
+
+            .bars {
+                display: none;
+            }
+        }
+    }
+
+    @mixin header-fixed {
+        padding: 7px 0;
+
+        .brand {
+            height: 20px;
+            justify-content: left;
+
+            a {
+                svg {
+                    position: absolute;
+                    left: 0;
+                }
+            }
+        }
+
+        .date {
+            display: none;
+        }
+
+        .header-right {
+            right: 25px;
+
+            a {
+                &.btn {
+
+                    height: 26px;
+                    font-size: 14px;
+                    padding: 6px;
+                }
+            }
+        }
+
+        .navbar-toggler {
+            display: inline;
+            position: absolute;
+            right: 0;
+            top: 0px;
+            height: 40px;
+            width: 40px;
+            padding: 0;
+
+            svg {
+                margin: auto;
+                fill: white;
+                height: 16px;
+            }
+        }
+
+    }
+
+    @media (max-width:map-get($grid-breakpoints, lg)) {
+        @include header-fixed()
+    }
+
+    &.fixed {
+        position: fixed;
+        max-width: 100%;
+        width: 100%;
+        top: 0;
+        @include header-fixed()
+    }
+}
+
+nav {
+    position: relative;
+    background-color: white;
+    border-bottom: 2px solid rgb(244, 245, 246);
+
+    .red-shape {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 13px;
+        width: 78px;
+        background-color: $red;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 15% 100%);
+
+    }
+
+    form {
+        position: absolute;
+        top: 13px;
+        width: 100%;
+
+        input {
+            position: absolute;
+            right: 85px;
+            padding: 0;
+            border: none;
+            width: 70px;
+            background-color: white;
+
+
+            transition: all 0.3s;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            padding: 2px 0;
+
+            &:focus {
+                width: calc(100% - 115px);
+                outline: none;
+
+                &::placeholder {
+                    color: rgba(0, 0, 0, 0)
+                }
+            }
+
+            ::placeholder {
+                color: rgba(0, 0, 0, .55)
+            }
+        }
+
+        label {
+            position: absolute;
+            right: 80px;
+
+            img {
+                height: 20px;
+                width: 20px;
+                ;
+            }
+        }
+    }
+
+    ul {
+        width: 100%;
+        padding: 0;
+        padding-right: 160px;
+
+        margin: 0;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(8, auto);
+
+        :nth-child(1) {
+            border: none;
+
+        }
+
+        li {
+            font-size: 21px;
+            line-height: 24px;
+            margin: 15px 0;
+            border-left: 1px solid #d9d9d9;
+
+            a {
+                color: black;
+                padding: 0;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+
+                &:hover {
+                    color: $red;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    @mixin navbar-fixed {
+        z-index: 666;
+        display: block;
+        position: fixed;
+        width: 220px;
+        height: 100%;
+        right: -220px;
+        top: 40px;
+        box-shadow: -2px 0px 2px 0px rgba(0, 0, 0, 0.1);
+        padding: 10px 0;
+
+        .red-shape {
+            display: none;
+        }
+
+        form {
+            position: relative;
+            top: 0;
+            height: 34px;
+            margin: 0;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+
+            input {
+                margin: 0;
+                right: 0;
+                left: 15px;
+            }
+
+            label {
+                right: 15px;
+
+            }
+        }
+
+        ul {
+            display: block;
+            padding: 0;
+
+            li {
+                margin: 0;
+                border: none;
+                justify-content: start;
+
+                a {
+                    padding: 5px 15px;
+                    position: relative;
+                    width: 100%;
+                    justify-content: left;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        right: 15px;
+                        top: 10px;
+                        justify-self: right;
+                        mask-image: url("https://g.newsweek.com/www/images/icon-arrow-right.svg");
+                        display: block;
+                        width: 8px;
+                        height: 14px;
+                        background-color: black;
+                    }
+
+                    &:hover {
+                        background-color: black;
+                        color: white;
+
+                        &:after {
+                            background-color: $red;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    &.fixed {
+        transition: all 0.3s;
+        @include navbar-fixed()
+    }
+
+    @media (max-width:map-get($grid-breakpoints, lg)) {
+        transition: all 0.3s;
+        @include navbar-fixed()
+    }
+
+    &.toggle {
+        right: 0;
+    }
+}
+
+main {
+
+    article,
+    .sponsor {
+        padding-bottom: 20px;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            a {
+                font-weight: bold;
+            }
+        }
+
+        h3 {
+            font-size: 24px;
+
+            @media (max-width: map-get($grid-breakpoints, md)) {
+                font-size: 20px;
+            }
+        }
+
+        .h2 {
+            font-size: 22px;
+            line-height: 24px;
+        }
+
+        .summary {
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #333;
+            font-weight: 100;
+
+            @media (max-width: map-get($grid-breakpoints, md)) {
+                font-size: 13px;
+            }
+        }
+
+        &.clearfix {
+            padding: 14px 0;
+            border-top: 1px solid rgb(221, 221, 221);
+
+            .image {
+                width: 135px;
+                float: left;
+                margin-right: 15px;
+
+                @media (max-width: map-get($grid-breakpoints, md)) {
+                    width: 258px;
+                }
+
+                @media (max-width: 481px) {
+                    width: 135px;
+                }
+            }
+
+            h4 {
+                font-size: 17px;
+                line-height: 18px;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .btn-main {
+        height: 38px;
+    }
+
+    @mixin red-hover {
+        &:hover {
+            text-decoration: none;
+            color: $red;
+        }
+    }
+
+    padding-top: 20px;
+    padding-bottom: 40px;
+    display: block;
+
+    &.container-fluid {
+        @media (min-width: map-get($grid-breakpoints, lg)) {
+            >.row {
+                margin: 0;
+                display: grid;
+                grid-template-columns: 71% 29%;
+            }
+        }
+
+    }
+
+    .block-title {
+        color: rgba(3, 3, 3, .4);
+        padding-bottom: 11px;
+        text-transform: uppercase;
+        line-height: 1em;
+
+        a {
+            color: rgba(3, 3, 3, .4);
+
+            &hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .subfeature2 {
+        margin-bottom: 30px;
+    }
+
+
+
+    .wrap {
+        margin-bottom: 10px;
+        position: relative;
+
+        .category {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 8px 15px;
+            background-color: rgba(255, 255, 255, .9);
+
+            a {
+                color: $red;
+                font-size: 17px;
+                text-transform: uppercase;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .image {
+        a {
+            display: block;
+            width: 100%;
+
+            picture {
+                display: block;
+                width: 100%;
+                height: auto;
+
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+        }
+    }
+
+    .sponsor {
+        max-width: 330px;
+        margin: auto;
+        padding-bottom: 30px;
+
+        @media(max-width:map-get($grid-breakpoints, md)) {
+            max-width: 100%;
+        }
+
+        .wrap {
+            margin: 0;
+        }
+
+        .shuffle {
+            margin: 0;
+
+            
+                span {
+                    display: block;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    padding-bottom: 66.75%;
+                }
+           
+        }
+
+        .category {
+            color: #3581f4;
+        }
+
+        .info {
+            padding: 20px;
+            border: 1px solid rgb(230, 230, 230);
+        }
+    }
+
+    .related {
+        border-top: 1px solid #d9d9d9;
+
+        li {
+            padding: 10px 0;
+            border-bottom: 1px solid #d9d9d9;
+        }
+
+        a {
+            @include red-hover()
+        }
+    }
+
+    #sticky2 {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+
+        #block-nw-home-featured-more {
+            flex-grow: 1;
+
+            .content {
+                position: sticky;
+                top: 0;
+            }
+        }
+    }
+
+    #sticky3 {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+
+        #block-nw-opinion {
+            ul {
+                :nth-child(1) {
+                    padding-top: 0;
+                    border-top: none;
+                }
+
+                li {
+                    border-top: 1px solid rgb(221, 221, 221);
+                    padding: 10px 0;
+
+                    .image {
+                        margin-right: 16px;
+                    }
+
+                    .info {
+                        font-size: 17px;
+                        line-height: 21px;
+
+                        a {
+                            @include red-hover();
+                        }
+                    }
+
+                    .byline {
+                        color: #555;
+                        margin-top: 4px;
+                        font-size: 14px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+
+        }
+
+        .latest-news {
+            :nth-child(1) {
+                border: none;
+            }
+
+            li {
+                padding: 14px 0;
+                border-top: 1px solid rgb(221, 221, 221);
+
+                picture {
+                    width: 135px;
+                    float: left;
+                    margin-right: 15px;
+
+                    @media (max-width: map-get($grid-breakpoints, md)) {
+                        width: 258px;
+                    }
+
+                    @media (max-width: 481px) {
+                        width: 135px;
+                    }
+                }
+
+                .info {
+                    font-size: 17px;
+                    line-height: 18px;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+
+        .newsletter-signup {
+            max-width: 300px;
+            margin: 0 auto 30px;
+            padding: 20px;
+            background-color: #f4f5f6;
+            border: 1px solid #e5e5e5;
+
+            .n-title {
+                font-size: 19px;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+            }
+
+            .signup {
+                margin-bottom: 10px;
+                width: 100px;
+                background-color: #666;
+
+                &:hover {
+                    background-color: #999;
+                }
+            }
+
+            .lk-5 {
+                font-size: 15px;
+                line-height: 15px;
+            }
+        }
+    }
+
+
+    #block-sticky {
+        flex-grow: 1;
+
+        .content {
+            position: sticky;
+            top: 0;
+        }
+    }
+
+    .icon-n {
+        display: block;
+        width: 29px;
+        height: 28px;
+        background: url(https://g.newsweek.com/www/images/logo-n1.svg) center/contain no-repeat #f72210;
+        margin-right: 10px;
+    }
+
+    .lk:after {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 14px;
+        margin-left: 10px;
+        background-color: white;
+        mask: url(https://g.newsweek.com/www/images/icon-arrow-right.svg) center/contain no-repeat;
+    }
+
+    .signup {
+        padding: 10px;
+        line-height: 18px;
+        width: 100px;
+    }
+
+    .subscribe {
+        width: 124px;
+    }
+
+    .page-bottom {
+        @media (min-width: map-get($grid-breakpoints, md)) {
+            margin: 0 15px;
+        }
+
+        .content {
+            margin-bottom: 20px;
+        }
+
+        .n-title {
+            width: 100%;
+            display: flex;
+            border-bottom: 1px solid #d9d9d9;
+            padding-bottom: 12px;
+            font-size: 19px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            justify-content: center;
+        }
+
+        .magazine {
+            .d-flex {
+                align-items: flex-end;
+
+                .wrap {
+                    margin: 0;
+                }
+
+                a {
+                    :after {
+                        fill: black;
+                    }
+                }
+
+                .lk {
+                    color: black;
+                    background-color: #f4f5f6;
+
+                    &:hover {
+                        background-color: #dbdcdd;
+                    }
+
+                    &:after {
+                        background-color: black;
+                    }
+
+                }
+            }
+
+            article {
+                .image {
+                    width: 100%;
+
+                    a {
+                        display: block;
+                        width: 100%;
+
+                        @media (min-width: map-get($grid-breakpoints, md)) {
+                            picture {
+                                display: block;
+                                position: relative;
+                                padding-bottom: 100%;
+                                overflow: hidden;
+
+                                img {
+                                    transform: translate(-50%, 0%);
+                                    position: absolute;
+                                    top: 0;
+                                    left: 50%;
+                                    width: auto;
+                                    height: 100%;
+                                    max-width: inherit;
+                                }
+                            }
+                        }
+                    }
+
+                    h5 {}
+                }
+
+                .bigshots {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    display: inline-block;
+                    box-sizing: border-box;
+                    padding: 0 7px;
+                    background-color: $red;
+                    color: white;
+                    margin-right: 7px;
+                }
+
+                .category {
+                    font-size: 16px;
+                    line-height: 26px;
+                    text-transform: uppercase;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+
+                    .mag-cat {
+                        display: inline-block;
+                        box-sizing: border-box;
+                        padding: 0 7px;
+                        background-color: $red;
+                        color: white;
+                        margin-right: 7px;
+
+                    }
+
+                    a {
+                        color: $red;
+
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+
+            .bottom {
+                padding-top: 30px;
+            }
+        }
+
+        .picture-galleries {
+            article {
+                padding-bottom: 40px;
+            }
+
+            .image {
+                margin-bottom: 20px;
+                position: relative;
+
+                .count-link {
+                    width: 70px;
+                    height: 52px;
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    font-weight: bold;
+                    font-size: 20px;
+                    line-height: 58px;
+                    text-indent: 5px;
+                    text-align: center;
+                    background: url(https://g.newsweek.com/themes/newsweek/images/icon-slideshows-nw.png) 0 0/contain no-repeat;
+                    color: #e9212e;
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            h4 {
+                font-size: 22px;
+
+                @media (max-width: map-get($grid-breakpoints, md)) {
+                    font-size: 18px;
+                }
+            }
+        }
+
+    }
+
+    .subscribe-block {
+        position: relative;
+        padding: 40px 15px 0 15px;
+
+        @media(max-width: map-get($grid-breakpoints, md)) {
+            padding: 40px 0 0 0;
+        }
+
+        &:before {
+            content: "";
+            display: block;
+            background-color: #f4f5f6;
+            height: 2px;
+            position: absolute;
+            top: 0;
+            left: -14px;
+            right: -14px;
+        }
+
+        .block-title {
+            color: $red;
+        }
+
+        .fd-c {
+            margin-bottom: 40px;
+
+            h3 {
+                font-size: 24px;
+                font-weight: bold;
+            }
+
+            p {
+                font-size: 15px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 100;
+            }
+
+            .ai-c {
+
+                background-color: #f4f5f6;
+                padding: 30px;
+
+                .image {
+                    position: relative;
+                    padding-bottom: 13px;
+                    padding-right: 90px;
+                    margin-bottom: 15px;
+
+                    .current {
+                        position: absolute;
+                        top: 13px;
+                        left: 80px;
+                    }
+                }
+            }
+
+            &.fd-2 {
+                display: flex;
+                flex-direction: column;
+
+                .image {
+                    max-width: 191px;
+                    width: 100%;
+                    height: auto;
+
+                    @media (max-width: map-get($grid-breakpoints, md)) {
+                        height: 160px;
+                        max-width: 100%;
+                    }
+                }
+
+                .info {
+                    border: 1px solid #ebebeb;
+                    padding: 20px;
+                }
+            }
+
+        }
+    }
+}
+
+
+
+
+footer {
+    margin: 0 30px;
+    color: #666;
+    font-family: $font-family-alternative;
+    font-weight: normal;
+    padding: 30px;
+    font-size: 14px;
+
+    border-top: 2px solid rgb(244, 245, 246);
+
+    @media (max-width:map-get($grid-breakpoints, lg)) {
+        margin: 0 15px;
+        padding: 30px 15px;
+    }
+
+    a {
+        color: #666;
+
+        &:hover {
+            text-decoration: none;
+            color: black;
+        }
+    }
+
+    .footer-top {
+
+        .brand svg,
+        p,
+        ul {
+            margin-bottom: 12px;
+        }
+
+        .brand svg {
+            margin-right: 15px;
+            width: 236px;
+            fill: $red;
+        }
+
+        p {
+            font-size: 12px;
+            line-height: 12px;
+        }
+
+        ul {
+            padding: 0;
+
+            li {
+                margin-right: 10px;
+
+                svg {
+                    height: 26px;
+                    fill: #555;
+                }
+            }
+        }
+
+    }
+
+    .footer-links {
+        padding-top: 6px;
+
+        label {
+            margin-right: 15px;
+
+            margin-top: 2px;
+        }
+
+        .menu {
+            padding: 0;
+            margin: 0;
+
+            :nth-last-child(1) {
+                border-right: none;
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+                max-height: 15px;
+                padding-right: 10px;
+                margin: 6px 10px 6px 0;
+
+                @media (min-width:map-get($grid-breakpoints, md)) {
+                    border-right: 1px solid rgb(214, 214, 214);
+                }
+            }
+        }
+    }
+
+}
